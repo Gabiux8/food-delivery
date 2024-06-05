@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.dto;
+package com.gabija.dto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

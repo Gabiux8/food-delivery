@@ -1,6 +1,6 @@
-package com.gabija.food.ordering.response;
+package com.gabija.response;
 
-import com.gabija.food.ordering.model.USER_ROLE;
+import com.gabija.model.USER_ROLE;
 import lombok.Data;
 
 @Data

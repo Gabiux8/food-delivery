@@ -1,10 +1,9 @@
-package com.gabija.food.ordering.request;
+package com.gabija.request;
 
-import com.gabija.food.ordering.model.Address;
-import com.gabija.food.ordering.model.ContactInformation;
+import com.gabija.model.Address;
+import com.gabija.model.ContactInformation;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data

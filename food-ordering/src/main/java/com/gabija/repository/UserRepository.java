@@ -1,9 +1,9 @@
-package com.gabija.food.ordering.repository;
+package com.gabija.repository;
 
-import com.gabija.food.ordering.model.User;
-import org.springframework.data.repository.CrudRepository;
+import com.gabija.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface UserRepository extends CrudRepository<User, Long> {
-   public User findByEmail(String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    public User findByEmail(String username);
 }

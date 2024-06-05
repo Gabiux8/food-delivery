@@ -1,14 +1,14 @@
-package com.gabija.food.ordering.controller;
+package com.gabija.controller;
 
-import com.gabija.food.ordering.config.JwtProvider;
-import com.gabija.food.ordering.model.Cart;
-import com.gabija.food.ordering.model.USER_ROLE;
-import com.gabija.food.ordering.model.User;
-import com.gabija.food.ordering.repository.CartRepository;
-import com.gabija.food.ordering.repository.UserRepository;
-import com.gabija.food.ordering.request.LoginRequest;
-import com.gabija.food.ordering.response.AuthResponse;
-import com.gabija.food.ordering.service.CustomerUserDetailsService;
+import com.gabija.config.JwtProvider;
+import com.gabija.model.Cart;
+import com.gabija.model.USER_ROLE;
+import com.gabija.model.User;
+import com.gabija.repository.CartRepository;
+import com.gabija.repository.UserRepository;
+import com.gabija.request.LoginRequest;
+import com.gabija.response.AuthResponse;
+import com.gabija.service.CustomerUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -70,7 +70,7 @@ public class AuthController {
         Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        String jwt=jwtProvider.generateToken(authentication);
+        String jwt = jwtProvider.generateToken(authentication);
 
         AuthResponse authResponse = new AuthResponse();
         authResponse.setJwt(jwt);
@@ -88,7 +88,7 @@ public class AuthController {
         Authentication authentication = authenticate(username, password);
 
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        String role=authorities.isEmpty()?null:authorities.iterator().next().getAuthority();
+        String role = authorities.isEmpty() ? null : authorities.iterator().next().getAuthority();
 
         String jwt = jwtProvider.generateToken(authentication);
 

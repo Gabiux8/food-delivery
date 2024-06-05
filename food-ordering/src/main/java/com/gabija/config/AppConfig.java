@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.config;
+package com.gabija.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
@@ -32,25 +32,29 @@ public class AppConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()));
         return http.build();
-    };
+    }
+
+    ;
+
     private CorsConfigurationSource corsConfigurationSource() {
         return new CorsConfigurationSource() {
             @Override
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
-               CorsConfiguration cfg = new CorsConfiguration();
-               cfg.setAllowedOrigins(Arrays.asList(
-                       "https://foodie.app",
-                       "http://localhost:3000"
-               ));
-               cfg.setAllowedMethods(Collections.singletonList("*"));
-               cfg.setAllowCredentials(true);
-               cfg.setExposedHeaders(Collections.singletonList("*"));
-               cfg.setExposedHeaders(Arrays.asList("Authorization"));
-               cfg.setMaxAge(3600L);
+                CorsConfiguration cfg = new CorsConfiguration();
+                cfg.setAllowedOrigins(Arrays.asList(
+                        "https://foodie.app",
+                        "http://localhost:3000"
+                ));
+                cfg.setAllowedMethods(Collections.singletonList("*"));
+                cfg.setAllowCredentials(true);
+                cfg.setExposedHeaders(Collections.singletonList("*"));
+                cfg.setExposedHeaders(Arrays.asList("Authorization"));
+                cfg.setMaxAge(3600L);
                 return cfg;
             }
         };
     }
+
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

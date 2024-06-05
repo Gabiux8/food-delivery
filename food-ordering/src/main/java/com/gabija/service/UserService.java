@@ -1,6 +1,7 @@
-package com.gabija.food.ordering.service;
+package com.gabija.service;
 
-import com.gabija.food.ordering.model.User;
+import com.gabija.model.User;
+
 
 public interface UserService {
     public User findUserByJwtToken(String jwt) throws Exception;

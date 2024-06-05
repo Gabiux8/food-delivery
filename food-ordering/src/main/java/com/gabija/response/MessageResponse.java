@@ -1,2 +1,8 @@
-package com.gabija.food.ordering.response;public class MessageResponse {
+package com.gabija.response;
+
+import lombok.Data;
+
+@Data
+public class MessageResponse {
+    private String message;
 }

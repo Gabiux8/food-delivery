@@ -1,7 +1,7 @@
-package com.gabija.food.ordering.controller;
+package com.gabija.controller;
 
-import com.gabija.food.ordering.model.User;
-import com.gabija.food.ordering.service.UserService;
+import com.gabija.model.User;
+import com.gabija.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

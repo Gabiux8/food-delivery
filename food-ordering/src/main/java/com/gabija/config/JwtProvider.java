@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.config;
+package com.gabija.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -21,7 +21,7 @@ public class JwtProvider {
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
         String roles = populateAuthorities(authorities);
 
-        String jwt = Jwts.builder().setIssuedAt(new Date()).setExpiration((new Date(new Date().getTime()+86400000))).claim("email", auth.getName()).claim("authorities", roles).signWith(key).compact();
+        String jwt = Jwts.builder().setIssuedAt(new Date()).setExpiration((new Date(new Date().getTime() + 86400000))).claim("email", auth.getName()).claim("authorities", roles).signWith(key).compact();
 
         return jwt;
     }

@@ -1,2 +1,10 @@
-package com.gabija.request;public class IngredientRequest {
+package com.gabija.request;
+
+import lombok.Data;
+
+@Data
+public class IngredientRequest {
+    private String name;
+    private Long categoryId;
+    private Long restaurantId;
 }

@@ -1,9 +1,9 @@
-package com.gabija.food.ordering.service;
+package com.gabija.service;
 
-import com.gabija.food.ordering.dto.RestaurantDto;
-import com.gabija.food.ordering.model.Restaurant;
-import com.gabija.food.ordering.model.User;
-import com.gabija.food.ordering.request.CreateRestaurantRequest;
+import com.gabija.dto.RestaurantDto;
+import com.gabija.model.Restaurant;
+import com.gabija.model.User;
+import com.gabija.request.CreateRestaurantRequest;
 
 import java.util.List;
 

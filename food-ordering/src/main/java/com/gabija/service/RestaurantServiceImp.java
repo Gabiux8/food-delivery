@@ -1,16 +1,15 @@
-package com.gabija.food.ordering.service;
+package com.gabija.service;
 
 
-import com.gabija.food.ordering.dto.RestaurantDto;
-import com.gabija.food.ordering.model.Address;
-import com.gabija.food.ordering.model.Restaurant;
-import com.gabija.food.ordering.model.User;
-import com.gabija.food.ordering.repository.AddressRepository;
-import com.gabija.food.ordering.repository.RestaurantRepository;
-import com.gabija.food.ordering.repository.UserRepository;
-import com.gabija.food.ordering.request.CreateRestaurantRequest;
+import com.gabija.dto.RestaurantDto;
+import com.gabija.model.Address;
+import com.gabija.model.Restaurant;
+import com.gabija.model.User;
+import com.gabija.repository.AddressRepository;
+import com.gabija.repository.RestaurantRepository;
+import com.gabija.repository.UserRepository;
+import com.gabija.request.CreateRestaurantRequest;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -113,9 +112,20 @@ public class RestaurantServiceImp implements RestaurantService {
         dto.setTitle(restaurant.getName());
         dto.setId(restaurantId);
 
-        if (user.getFavorites().contains(dto)) {
-            user.getFavorites().remove(dto);
-        } else user.getFavorites().add(dto);
+        boolean isFavorited = false;
+        List<RestaurantDto> favorites = user.getFavorites();
+        for (RestaurantDto favorite : favorites) {
+            if (favorite.getId().equals(restaurantId)) {
+                isFavorited = true;
+                break;
+            }
+        }
+
+        if (isFavorited) {
+            favorites.removeIf(favorite -> favorite.getId().equals(restaurantId));
+        } else {
+            favorites.add(dto);
+        }
 
         userRepository.save(user);
         return dto;

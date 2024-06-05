@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.model;
+package com.gabija.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

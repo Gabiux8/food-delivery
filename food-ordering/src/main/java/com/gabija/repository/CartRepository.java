@@ -1,7 +1,9 @@
-package com.gabija.food.ordering.repository;
+package com.gabija.repository;
 
-import com.gabija.food.ordering.model.Cart;
+import com.gabija.model.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
+
+    public Cart findByCustomerId(Long userId);
 }

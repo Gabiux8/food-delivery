@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.model;
+package com.gabija.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -25,5 +25,5 @@ public class IngredientCategory {
     private Restaurant restaurant;
 
     @OneToOne(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<IngredientsItem> ingredients=new ArrayList<>();
+    private List<IngredientsItem> ingredients = new ArrayList<>();
 }

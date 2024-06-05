@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.model;
+package com.gabija.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -31,17 +31,17 @@ public class Order {
 
     private String orderStatus;
 
-   private Date createdAt;
+    private Date createdAt;
 
-   @ManyToOne
-   private Address deliveryAddress;
+    @ManyToOne
+    private Address deliveryAddress;
 
-   @OneToMany
-   private List<OrderItem> items;
+    @OneToMany
+    private List<OrderItem> items;
 
 //   private Payment payment
 
-   private int totalItem;
+    private int totalItem;
 
-   private int totalPrice;
+    private Long totalPrice;
 }

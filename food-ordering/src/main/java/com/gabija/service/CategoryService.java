@@ -1,2 +1,14 @@
-package com.gabija.service;public interface CategoryService {
+package com.gabija.service;
+
+import com.gabija.model.Category;
+
+import java.util.List;
+
+public interface CategoryService {
+
+    public Category createCategory(String name, Long userIde) throws Exception;
+
+    public List<Category> findCategoryByRestaurantId(Long id) throws Exception;
+
+    public Category findCategoryById(Long id) throws Exception;
 }

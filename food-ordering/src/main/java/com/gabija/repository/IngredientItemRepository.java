@@ -1,2 +1,11 @@
-package com.gabija.repository;public interface IngredientItemRepository {
+package com.gabija.repository;
+
+
+import com.gabija.model.IngredientsItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface IngredientItemRepository extends JpaRepository<IngredientsItem, Long> {
+    List<IngredientsItem> findByRestaurantId(Long id);
 }

@@ -1,8 +1,8 @@
-package com.gabija.food.ordering.service;
+package com.gabija.service;
 
-import com.gabija.food.ordering.config.JwtProvider;
-import com.gabija.food.ordering.model.User;
-import com.gabija.food.ordering.repository.UserRepository;
+import com.gabija.config.JwtProvider;
+import com.gabija.model.User;
+import com.gabija.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,9 @@
-package com.gabija.food.ordering.service;
+package com.gabija.service;
 
-import com.gabija.food.ordering.model.USER_ROLE;
+import com.gabija.model.USER_ROLE;
 
-import com.gabija.food.ordering.model.User;
-import com.gabija.food.ordering.repository.UserRepository;
+import com.gabija.model.User;
+import com.gabija.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class CustomerUserDetailsService implements UserDetailsService {
 
-  @Autowired
+    @Autowired
     private UserRepository userRepository;
 
     @Override
@@ -28,7 +28,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found with email" + username);
         }
 
-        USER_ROLE role=user.getRole();
+        USER_ROLE role = user.getRole();
 
 
         List<GrantedAuthority> authorities = new ArrayList<>();

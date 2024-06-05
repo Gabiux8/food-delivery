@@ -1,2 +1,8 @@
-package com.gabija.repository;public interface OrderItemRepository {
+package com.gabija.repository;
+
+import com.gabija.model.OrderItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
 }

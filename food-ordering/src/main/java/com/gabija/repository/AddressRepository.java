@@ -1,7 +1,7 @@
-package com.gabija.food.ordering.repository;
+package com.gabija.repository;
 
-import com.gabija.food.ordering.model.Address;
-import org.springframework.data.repository.CrudRepository;
+import com.gabija.model.Address;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AddressRepository extends CrudRepository<Address, Long> {
+public interface AddressRepository extends JpaRepository<Address, Long> {
 }

@@ -1,4 +1,4 @@
-package com.gabija.food.ordering.request;
+package com.gabija.request;
 
 import lombok.Data;
 
